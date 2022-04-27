@@ -41,6 +41,8 @@ a {
     color: #fff;
     border: 1px solid transparent;
     border-radius: .25rem;
+    font-size: 1.08em;
+    font-family: 'Lora', serif;
 }
 
 .btn:hover {
@@ -64,6 +66,26 @@ a {
     line-height: 1.5rem;
     font-size: 1.2em;
     font-family: 'Lora', serif;
+}
+
+.msg {
+    width: 100%;
+    margin: 5px auto;
+    padding: 8px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+.success {
+    color: #3a6e3a;
+    border: 1px solid #3a6e3a;
+    background-color: #bcf5bc;
+}
+
+.error {
+    color: #884b4b;
+    border: 1px solid #884b4b;
+    background-color: #f5bcbc;
 }
 
 /* Navbar */
@@ -344,6 +366,34 @@ header .menu-toggle {
 
 /* Content */
 
+/* AUTH pages */
+
+.auth-content {
+    width: 30%;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.auth-content .form-title {
+    text-align: center;
+}
+
+.auth-content form div {
+    margin-bottom: 10px;
+}
+
+.auth-content form p {
+    text-align: center;
+}
+
+.auth-content form p a {
+    text-decoration: underline;
+}
+
+/* AUTH pages */
+
 /* Footer */
 
 .footer {
@@ -471,6 +521,7 @@ header .menu-toggle {
         position: static;
         display: block;
         width: 100%;
+        z-index: 9999;
     }
 
     header ul li ul li a {

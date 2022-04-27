@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
+
+    <!-- Custom Styling -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <h1 class="logo-text"><span>Talk</span>Randomly</h1>
+        </div>
+        <i class="fa fa-bars menu-toggle"></i>
+        <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <!-- <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Login</a></li> -->
+            <li>
+                <a href="#">
+                    <i class="fa fa-user"></i>
+                    MohamadAli
+                    <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
+                </a>
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#" class="logout">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+    </header>
+
+    <div class="auth-content">
+
+        <form action="register.html" method="post">
+            <h2 class="form-title">Register</h2>
+
+            <!-- <div class="msg error">
+                <li>Username required</li>
+            </div> -->
+
+            <div>
+                <label>Username</label>
+                <input type="text" class="text-input" name="username">
+            </div>
+
+            <div>
+                <label>Email</label>
+                <input type="email" class="text-input" name="email">
+            </div>
+
+            <div>
+                <label>Password</label>
+                <input type="password" class="text-input" name="password">
+            </div>
+
+            <div>
+                <label>Confirm Password</label>
+                <input type="password" class="text-input" name="passwordConf">
+            </div>
+
+            <div>
+                <button type="submit" name="register-btn" class="btn btn-big">Register</button>
+            </div>
+            <p>Or <a href="login.html">Sign In</a></p>
+
+        </form>
+
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Custom Script -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
