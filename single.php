@@ -1,3 +1,4 @@
+<?php include 'path.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
 
     <!-- Custom Styling -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -24,30 +25,7 @@
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v13.0"
         nonce="hftN2Bt6"></script>
 
-    <header>
-        <div class="logo">
-            <h1 class="logo-text"><span>Talk</span>Randomly</h1>
-        </div>
-        <i class="fa fa-bars menu-toggle"></i>
-        <ul class="nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <!-- <li><a href="#">Sign Up</a></li>
-            <li><a href="#">Login</a></li> -->
-            <li>
-                <a href="#">
-                    <i class="fa fa-user"></i>
-                    MohamadAli
-                    <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
-                </a>
-                <ul>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="#" class="logout">Logout</a></li>
-                </ul>
-            </li>
-        </ul>
-    </header>
+    <?php include ROOT_PATH . '/app/includes/header.php'; ?>
 
 
     <!-- Page Wrapper starts -->
@@ -144,27 +122,27 @@
                     <h2 class="section-title">Popular</h2>
 
                     <div class="post clearfix">
-                        <img src="images/image_1.jpg" alt="">
+                        <img src="assets/images/image_1.jpg" alt="">
                         <a href="#" class="title">How to overcome your fears</a>
                     </div>
 
                     <div class="post clearfix">
-                        <img src="images/image_2.jpg" alt="">
+                        <img src="assets/images/image_2.jpg" alt="">
                         <a href="#" class="title">How to overcome your fears</a>
                     </div>
 
                     <div class="post clearfix">
-                        <img src="images/image_3.jpg" alt="">
+                        <img src="assets/images/image_3.jpg" alt="">
                         <a href="#" class="title">How to overcome your fears</a>
                     </div>
 
                     <div class="post clearfix">
-                        <img src="images/image_4.jpg" alt="">
+                        <img src="assets/images/image_4.jpg" alt="">
                         <a href="#" class="title">How to overcome your fears</a>
                     </div>
 
                     <div class="post clearfix">
-                        <img src="images/image_5.jpg" alt="">
+                        <img src="assets/images/image_5.jpg" alt="">
                         <a href="#" class="title">How to overcome your fears</a>
                     </div>
 
@@ -196,81 +174,7 @@
     <!-- Page Wrapper ends -->
 
 
-    <!-- Footer starts -->
-
-    <div class="footer">
-        <div class="footer-content">
-
-            <!-- About section -->
-            <div class="footer-section about">
-                <h1 class="logo-text"><span>Talk</span>Randomly</h1>
-                <p class="text">
-                    TalkRandomly is a real life blog conceived for the purpose to share random thoughts through out the
-                    day.
-                    However, MohamadAli is a Web developer, building his career to be successful.
-                </p>
-                <div class="contact">
-                    <span><i class="fas fa-phone"></i> &nbsp; 12-345-678</span>
-                    <span><i class="fas fa-envelope"></i> &nbsp; info@talkrandomly.com</span>
-                </div>
-                <div class="socials">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            <!-- About Section -->
-
-            <!-- Links Section -->
-            <div class="footer-section links">
-                <h2>Quick Links</h2>
-                <br>
-                <ul>
-                    <a href="#">
-                        <li>Events</li>
-                    </a>
-                    <a href="#">
-                        <li>Team</li>
-                    </a>
-                    <a href="#">
-                        <li>Mentores</li>
-                    </a>
-                    <a href="#">
-                        <li>Gallery</li>
-                    </a>
-                    <a href="#">
-                        <li>Terms and Conditions</li>
-                    </a>
-                </ul>
-            </div>
-            <!-- Links Section -->
-
-            <!-- Contact-Form Section -->
-            <div class="footer-section contact-form">
-                <h2>Contact</h2>
-                <br>
-                <form action="index.html" method="post">
-                    <input type="email" name="email" class="text-input contact-input"
-                        placeholder="Your email address...">
-                    <textarea row="4" name="message" class="text-input contact-input"
-                        placeholder="Your message..."></textarea>
-                    <button type="submit" class="btn btn-big contact-btn">
-                        <i class="fas fa-envelope"></i>
-                        Send
-                    </button>
-                </form>
-            </div>
-            <!-- Contact-Form Section -->
-
-        </div>
-
-        <div class="footer-bottom">
-            &copy; talkrandomly.com | Designed by MohamadAli Azzam
-        </div>
-    </div>
-
-    <!-- Footer ends -->
+    <?php include ROOT_PATH . '/app/includes/footer.php'; ?>
 
 
     <!-- jQuery -->
@@ -280,7 +184,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <!-- Custom Script -->
-    <script src="js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 
 </body>
 

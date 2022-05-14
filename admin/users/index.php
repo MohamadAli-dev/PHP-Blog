@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Section - Manage Posts</title>
+    <title>Admin Section - Manage Users</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -14,10 +14,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
 
     <!-- Custom Styling -->
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 
     <!-- Admin Styling -->
-    <link rel="stylesheet" href="../../css/admin.css">
+    <link rel="stylesheet" href="../../assets/css/admin.css">
 </head>
 
 <body>
@@ -50,9 +50,9 @@
 
         <div class="left-sidebar">
             <ul>
-                <li><a href="index.html">Manage Posts</a></li>
-                <li><a href="../users/index.html">Manage Users</a></li>
-                <li><a href="../topics/index.html">Manage Topics</a></li>
+                <li><a href="../posts/index.php">Manage Posts</a></li>
+                <li><a href="index.php">Manage Users</a></li>
+                <li><a href="../topics/index.php">Manage Topics</a></li>
             </ul>
         </div>
 
@@ -62,37 +62,35 @@
 
         <div class="admin-content">
             <div class="button-group">
-                <a href="create.html" class="btn btn-big">Add Post</a>
-                <a href="index.html" class="btn btn-big">Manage Posts</a>
+                <a href="create.php" class="btn btn-big">Add User</a>
+                <a href="index.php" class="btn btn-big">Manage Users</a>
             </div>
 
             <div class="content">
 
-                <h2 class="page-title">Manage Posts</h2>
+                <h2 class="page-title">Manage Users</h2>
 
                 <table>
                     <thead>
                         <th>SN</th>
-                        <th>Title</th>
-                        <th>Author</th>
-                        <th colspan="3">Action</th>
+                        <th>Username</th>
+                        <th>Role</th>
+                        <th colspan="2">Action</th>
                     </thead>
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td>This is the first post</td>
                             <td>MohamadAli</td>
+                            <td>Admin</td>
                             <td><a href="#" class="edit">edit</a></td>
                             <td><a href="#" class="delete">delete</a></td>
-                            <td><a href="#" class="publish ">publish</a></td>
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td>This is the second post</td>
                             <td>Mario</td>
+                            <td>Author</td>
                             <td><a href="#" class="edit">edit</a></td>
                             <td><a href="#" class="delete">delete</a></td>
-                            <td><a href="#" class="publish ">publish</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -111,7 +109,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- Custom Script -->
-    <script src="../../js/script.js"></script>
+    <script src="../../assets/js/script.js"></script>
 
 </body>
 

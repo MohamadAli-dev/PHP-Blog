@@ -1,3 +1,4 @@
+<?php include 'path.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,39 +15,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
 
     <!-- Custom Styling -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-
-    <header>
-        <div class="logo">
-            <h1 class="logo-text"><span>Talk</span>Randomly</h1>
-        </div>
-        <i class="fa fa-bars menu-toggle"></i>
-        <ul class="nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <!-- <li><a href="#">Sign Up</a></li>
-            <li><a href="#">Login</a></li> -->
-            <li>
-                <a href="#">
-                    <i class="fa fa-user"></i>
-                    MohamadAli
-                    <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
-                </a>
-                <ul>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="#" class="logout">Logout</a></li>
-                </ul>
-            </li>
-        </ul>
-    </header>
+    <?php include ROOT_PATH . '/app/includes/header.php'; ?>
 
     <div class="auth-content">
 
-        <form action="register.html" method="post">
+        <form action="register.php" method="post">
             <h2 class="form-title">Register</h2>
 
             <!-- <div class="msg error">
@@ -76,7 +53,7 @@
             <div>
                 <button type="submit" name="register-btn" class="btn btn-big">Register</button>
             </div>
-            <p>Or <a href="login.html">Sign In</a></p>
+            <p>Or <a href="<?php echo BASE_URL . '/login.php' ?>">Sign In</a></p>
 
         </form>
 
@@ -87,7 +64,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- Custom Script -->
-    <script src="js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 
 </body>
 

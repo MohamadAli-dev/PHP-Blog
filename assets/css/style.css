@@ -126,6 +126,18 @@ header ul li {
     position: relative;
 }
 
+header ul li a {
+    display: block;
+    padding: 21px;
+    font-size: 1.1em;
+    text-decoration: none;
+}
+
+header ul li a:hover {
+    background-color: #006669;
+    transition: 0.5s;
+}
+
 header ul li ul {
     position: absolute;
     top: 66px;
@@ -155,18 +167,6 @@ header ul li ul li a.logout {
 
 header ul li ul li a:hover {
     background: #d5d6d6;
-}
-
-header ul li a {
-    display: block;
-    padding: 21px;
-    font-size: 1.1em;
-    text-decoration: none;
-}
-
-header ul li a:hover {
-    background-color: #006669;
-    transition: 0.5s;
 }
 
 header .menu-toggle {
@@ -531,7 +531,7 @@ header .menu-toggle {
 
     .content .main-content-wrapper {
         padding: 10px;
-        
+
     }
 
     .content .main-content-wrapper .main-content .post {
@@ -596,6 +596,7 @@ header .menu-toggle {
 
     header ul li {
         width: 100%;
+        z-index: 9999;
     }
 
     header ul li ul {
@@ -618,6 +619,7 @@ header .menu-toggle {
 
     header ul li ul li a:hover {
         background: #006669;
+        z-index: 9999;
     }
 
     header .menu-toggle {

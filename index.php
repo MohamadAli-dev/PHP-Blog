@@ -1,3 +1,4 @@
+<?php include 'path.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,35 +15,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
 
     <!-- Custom Styling -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-    <header>
-        <div class="logo">
-            <h1 class="logo-text"><span>Talk</span>Randomly</h1>
-        </div>
-        <i class="fa fa-bars menu-toggle"></i>
-        <ul class="nav">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <!-- <li><a href="#">Sign Up</a></li>
-            <li><a href="#">Login</a></li> -->
-            <li>
-                <a href="#">
-                    <i class="fa fa-user"></i>
-                    MohamadAli
-                    <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
-                </a>
-                <ul>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="#" class="logout">Logout</a></li>
-                </ul>
-            </li>
-        </ul>
-    </header>
+    <?php include ROOT_PATH . '/app/includes/header.php'; ?>
 
 
     <!-- Page Wrapper starts -->
@@ -58,9 +36,9 @@
 
             <div class="post-wrapper">
                 <div class="post">
-                    <img src="images/image_1.jpg" alt="" class="slider-image">
+                    <img src="assets/images/image_1.jpg" alt="" class="slider-image">
                     <div class="post-info">
-                        <h4><a href="single.html">One day your life will flash before your eyes</a></h4>
+                        <h4><a href="single.php">One day your life will flash before your eyes</a></h4>
                         <i class="far fa-user"> MohamadAli</i>
                         &nbsp;
                         <i class="far fa-calendar"> Apr 24, 2022</i>
@@ -68,9 +46,9 @@
                 </div>
 
                 <div class="post">
-                    <img src="images/image_2.jpg" alt="" class="slider-image">
+                    <img src="assets/images/image_2.jpg" alt="" class="slider-image">
                     <div class="post-info">
-                        <h4><a href="single.html">One day your life will flash before your eyes</a></h4>
+                        <h4><a href="single.php">One day your life will flash before your eyes</a></h4>
                         <i class="far fa-user"> MohamadAli</i>
                         &nbsp;
                         <i class="far fa-calendar"> Apr 24, 2022</i>
@@ -78,9 +56,9 @@
                 </div>
 
                 <div class="post">
-                    <img src="images/image_3.jpg" alt="" class="slider-image">
+                    <img src="assets/images/image_3.jpg" alt="" class="slider-image">
                     <div class="post-info">
-                        <h4><a href="single.html">One day your life will flash before your eyes</a></h4>
+                        <h4><a href="single.php">One day your life will flash before your eyes</a></h4>
                         <i class="far fa-user"> MohamadAli</i>
                         &nbsp;
                         <i class="far fa-calendar"> Apr 24, 2022</i>
@@ -88,9 +66,9 @@
                 </div>
 
                 <div class="post">
-                    <img src="images/image_4.jpg" alt="" class="slider-image">
+                    <img src="assets/images/image_4.jpg" alt="" class="slider-image">
                     <div class="post-info">
-                        <h4><a href="single.html">One day your life will flash before your eyes</a></h4>
+                        <h4><a href="single.php">One day your life will flash before your eyes</a></h4>
                         <i class="far fa-user"> MohamadAli</i>
                         &nbsp;
                         <i class="far fa-calendar"> Apr 24, 2022</i>
@@ -98,9 +76,9 @@
                 </div>
 
                 <div class="post">
-                    <img src="images/image_5.jpg" alt="" class="slider-image">
+                    <img src="assets/images/image_5.jpg" alt="" class="slider-image">
                     <div class="post-info">
-                        <h4><a href="single.html">One day your life will flash before your eyes</a></h4>
+                        <h4><a href="single.php">One day your life will flash before your eyes</a></h4>
                         <i class="far fa-user"> MohamadAli</i>
                         &nbsp;
                         <i class="far fa-calendar"> Apr 24, 2022</i>
@@ -108,9 +86,9 @@
                 </div>
 
                 <div class="post">
-                    <img src="images/image_6.jpg" alt="" class="slider-image">
+                    <img src="assets/images/image_6.jpg" alt="" class="slider-image">
                     <div class="post-info">
-                        <h4><a href="single.html">One day your life will flash before your eyes</a></h4>
+                        <h4><a href="single.php">One day your life will flash before your eyes</a></h4>
                         <i class="far fa-user"> MohamadAli</i>
                         &nbsp;
                         <i class="far fa-calendar"> Apr 24, 2022</i>
@@ -130,58 +108,58 @@
                 <h1 class="recent-post-title">Recent Posts</h1>
 
                 <div class="post clearfix">
-                    <img src="images/image_1.jpg" alt="" class="post-image">
+                    <img src="assets/images/image_1.jpg" alt="" class="post-image">
                     <div class="post-preview">
-                        <h2><a href="single.html">The strongest and sweetest songs yet remain to be sung</a></h2>
+                        <h2><a href="single.php">The strongest and sweetest songs yet remain to be sung</a></h2>
                         <i class="far fa-user"> MohamadAli</i>
                         &nbsp;
                         <i class="far fa-calendar"> Apr 24, 2022</i>
                         <p class="preview-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis,
                             deleniti eius. Veritatis asperiores soluta atque porro minima voluptas facere aspernatur
                             accusamus vel.</p>
-                        <a href="single.html" class="btn read-more"> Read More</a>
+                        <a href="single.php" class="btn read-more"> Read More</a>
                     </div>
                 </div>
 
                 <div class="post clearfix">
-                    <img src="images/image_2.jpg" alt="" class="post-image">
+                    <img src="assets/images/image_2.jpg" alt="" class="post-image">
                     <div class="post-preview">
-                        <h2><a href="single.html">The strongest and sweetest songs yet remain to be sung</a></h2>
+                        <h2><a href="single.php">The strongest and sweetest songs yet remain to be sung</a></h2>
                         <i class="far fa-user"> MohamadAli</i>
                         &nbsp;
                         <i class="far fa-calendar"> Apr 24, 2022</i>
                         <p class="preview-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis,
                             deleniti eius. Veritatis asperiores soluta atque porro minima voluptas facere aspernatur
                             accusamus vel.</p>
-                        <a href="single.html" class="btn read-more"> Read More</a>
+                        <a href="single.php" class="btn read-more"> Read More</a>
                     </div>
                 </div>
 
                 <div class="post clearfix">
-                    <img src="images/image_3.jpg" alt="" class="post-image">
+                    <img src="assets/images/image_3.jpg" alt="" class="post-image">
                     <div class="post-preview">
-                        <h2><a href="single.html">The strongest and sweetest songs yet remain to be sung</a></h2>
+                        <h2><a href="single.php">The strongest and sweetest songs yet remain to be sung</a></h2>
                         <i class="far fa-user"> MohamadAli</i>
                         &nbsp;
                         <i class="far fa-calendar"> Apr 24, 2022</i>
                         <p class="preview-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis,
                             deleniti eius. Veritatis asperiores soluta atque porro minima voluptas facere aspernatur
                             accusamus vel.</p>
-                        <a href="single.html" class="btn read-more"> Read More</a>
+                        <a href="single.php" class="btn read-more"> Read More</a>
                     </div>
                 </div>
 
                 <div class="post clearfix">
-                    <img src="images/image_4.jpg" alt="" class="post-image">
+                    <img src="assets/images/image_4.jpg" alt="" class="post-image">
                     <div class="post-preview">
-                        <h2><a href="single.html">The strongest and sweetest songs yet remain to be sung</a></h2>
+                        <h2><a href="single.php">The strongest and sweetest songs yet remain to be sung</a></h2>
                         <i class="far fa-user"> MohamadAli</i>
                         &nbsp;
                         <i class="far fa-calendar"> Apr 24, 2022</i>
                         <p class="preview-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis,
                             deleniti eius. Veritatis asperiores soluta atque porro minima voluptas facere aspernatur
                             accusamus vel.</p>
-                        <a href="single.html" class="btn read-more"> Read More</a>
+                        <a href="single.php" class="btn read-more"> Read More</a>
                     </div>
                 </div>
 
@@ -193,7 +171,7 @@
 
                 <div class="section search">
                     <h2 class="section-title">Search</h2>
-                    <form action="index.html" method="post">
+                    <form action="index.php" method="post">
                         <input type="text" name="search-term" class="text-input" placeholder="Search...">
                     </form>
                 </div>
@@ -224,81 +202,7 @@
     <!-- Page Wrapper ends -->
 
 
-    <!-- Footer starts -->
-
-    <div class="footer">
-        <div class="footer-content">
-
-            <!-- About section -->
-            <div class="footer-section about">
-                <h1 class="logo-text"><span>Talk</span>Randomly</h1>
-                <p class="text">
-                    TalkRandomly is a real life blog conceived for the purpose to share random thoughts through out the
-                    day.
-                    However, MohamadAli is a Web developer, building his career to be successful.
-                </p>
-                <div class="contact">
-                    <span><i class="fas fa-phone"></i> &nbsp; 12-345-678</span>
-                    <span><i class="fas fa-envelope"></i> &nbsp; info@talkrandomly.com</span>
-                </div>
-                <div class="socials">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            <!-- About Section -->
-
-            <!-- Links Section -->
-            <div class="footer-section links">
-                <h2>Quick Links</h2>
-                <br>
-                <ul>
-                    <a href="#">
-                        <li>Events</li>
-                    </a>
-                    <a href="#">
-                        <li>Team</li>
-                    </a>
-                    <a href="#">
-                        <li>Mentores</li>
-                    </a>
-                    <a href="#">
-                        <li>Gallery</li>
-                    </a>
-                    <a href="#">
-                        <li>Terms and Conditions</li>
-                    </a>
-                </ul>
-            </div>
-            <!-- Links Section -->
-
-            <!-- Contact-Form Section -->
-            <div class="footer-section contact-form">
-                <h2>Contact</h2>
-                <br>
-                <form action="index.html" method="post">
-                    <input type="email" name="email" class="text-input contact-input"
-                        placeholder="Your email address...">
-                    <textarea row="4" name="message" class="text-input contact-input"
-                        placeholder="Your message..."></textarea>
-                    <button type="submit" class="btn btn-big contact-btn">
-                        <i class="fas fa-envelope"></i>
-                        Send
-                    </button>
-                </form>
-            </div>
-            <!-- Contact-Form Section -->
-
-        </div>
-
-        <div class="footer-bottom">
-            &copy; talkrandomly.com | Designed by MohamadAli Azzam
-        </div>
-    </div>
-
-    <!-- Footer ends -->
+    <?php include ROOT_PATH . '/app/includes/footer.php'; ?>
 
 
     <!-- jQuery -->
@@ -308,7 +212,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <!-- Custom Script -->
-    <script src="js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 
 </body>
 

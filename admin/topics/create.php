@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Section - Add User</title>
+    <title>Admin Section - Add Topic</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -14,10 +14,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
 
     <!-- Custom Styling -->
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 
     <!-- Admin Styling -->
-    <link rel="stylesheet" href="../../css/admin.css">
+    <link rel="stylesheet" href="../../assets/css/admin.css">
 </head>
 
 <body>
@@ -50,9 +50,9 @@
 
         <div class="left-sidebar">
             <ul>
-                <li><a href="../posts/index.html">Manage Posts</a></li>
-                <li><a href="index.html">Manage Users</a></li>
-                <li><a href="../topics/index.html">Manage Topics</a></li>
+                <li><a href="../posts/index.php">Manage Posts</a></li>
+                <li><a href="../users/index.php">Manage Users</a></li>
+                <li><a href="index.php">Manage Topics</a></li>
             </ul>
         </div>
 
@@ -62,40 +62,25 @@
 
         <div class="admin-content">
             <div class="button-group">
-                <a href="create.html" class="btn btn-big">Add User</a>
-                <a href="index.html" class="btn btn-big">Manage Users</a>
+                <a href="create.php" class="btn btn-big">Add Topic</a>
+                <a href="index.php" class="btn btn-big">Manage Topics</a>
             </div>
 
             <div class="content">
 
-                <h2 class="page-title">Add User</h2>
+                <h2 class="page-title">Add Topic</h2>
 
-                <form action="create.html" method="post">
+                <form action="create.php" method="post">
                     <div>
-                        <label>Username</label>
-                        <input type="text" class="text-input" name="username">
+                        <label>Name</label>
+                        <input type="text" name="name" class="text-input">
                     </div>
                     <div>
-                        <label>Email</label>
-                        <input type="email" class="text-input" name="email">
+                        <label>Description</label>
+                        <textarea name="description" id="body"></textarea>
                     </div>
                     <div>
-                        <label>Password</label>
-                        <input type="password" class="text-input" name="password">
-                    </div>
-                    <div>
-                        <label>Password Confirmation</label> <input type="password" class="text-input"
-                                name="passwordConf">
-                    </div>
-                    <div>
-                        <label>Role</label>
-                        <select name="role" class="text-input">
-                            <option value="Admin">Admin</option>
-                            <option value="Author">Author</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button type="submit" class="btn btn-big">Add User</button>
+                        <button type="submit" class="btn btn-big">Add Topic</button>
                     </div>
                 </form>
 
@@ -116,7 +101,7 @@
     <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 
     <!-- Custom Script -->
-    <script src="../../js/script.js"></script>
+    <script src="../../assets/js/script.js"></script>
 
 </body>
 

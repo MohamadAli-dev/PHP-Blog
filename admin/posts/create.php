@@ -14,10 +14,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Candal&family=Lora&display=swap" rel="stylesheet">
 
     <!-- Custom Styling -->
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
 
     <!-- Admin Styling -->
-    <link rel="stylesheet" href="../../css/admin.css">
+    <link rel="stylesheet" href="../../assets/css/admin.css">
 </head>
 
 <body>
@@ -50,9 +50,9 @@
 
         <div class="left-sidebar">
             <ul>
-                <li><a href="index.html">Manage Posts</a></li>
-                <li><a href="../users/index.html">Manage Users</a></li>
-                <li><a href="../topics/index.html">Manage Topics</a></li>
+                <li><a href="index.php">Manage Posts</a></li>
+                <li><a href="../users/index.php">Manage Users</a></li>
+                <li><a href="../topics/index.php">Manage Topics</a></li>
             </ul>
         </div>
 
@@ -62,15 +62,15 @@
 
         <div class="admin-content">
             <div class="button-group">
-                <a href="create.html" class="btn btn-big">Add Post</a>
-                <a href="index.html" class="btn btn-big">Manage Posts</a>
+                <a href="create.php" class="btn btn-big">Add Post</a>
+                <a href="index.php" class="btn btn-big">Manage Posts</a>
             </div>
 
             <div class="content">
 
                 <h2 class="page-title">Add Post</h2>
 
-                <form action="create.html" method="post">
+                <form action="create.php" method="post">
                     <div>
                         <label>Title</label>
                         <input type="text" name="title" class="text-input">
@@ -112,7 +112,7 @@
     <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 
     <!-- Custom Script -->
-    <script src="../../js/script.js"></script>
+    <script src="../../assets/js/script.js"></script>
 
 </body>
 
