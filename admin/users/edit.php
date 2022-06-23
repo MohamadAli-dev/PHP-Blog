@@ -10,7 +10,7 @@ adminOnly();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Section - Add User</title>
+    <title>Admin Section - Edit User</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -49,10 +49,11 @@ adminOnly();
 
             <div class="content">
 
-                <h2 class="page-title">Add User</h2>
+                <h2 class="page-title">Edit User</h2>
                 <?php include ROOT_PATH . "/app/helpers/formErrors.php" ?>
 
-                <form action="create.php" method="post" enctype="multipart/form-data">
+                <form action="edit.php" method="post">
+                    <input type="hidden" value="<?php echo $id; ?>" name="id">
                     <div>
                         <label>Username</label>
                         <input type="text" class="text-input" value="<?php echo $username; ?>" name="username">
@@ -66,16 +67,16 @@ adminOnly();
                         <input type="password" class="text-input" value="<?php echo $password; ?>" name="password">
                     </div>
                     <div>
-                        <label>Password Confirmation</label> 
-                        <input type="password" class="text-input"  value="<?php echo $passwordConf; ?>" name="passwordConf">
+                        <label>Password Confirmation</label>
+                        <input type="password" class="text-input" value="<?php echo $passwordConf; ?>" name="passwordConf">
                     </div>
                     <div>
-                        <?php if (isset($admin) && $admin == 1): ?>
+                        <?php if (isset($admin) && $admin == 1) : ?>
                             <label>
                                 <input type="checkbox" name="admin" checked>
                                 Admin
                             </label>
-                        <?php else: ?>
+                        <?php else : ?>
                             <label>
                                 <input type="checkbox" name="admin">
                                 Admin
@@ -84,7 +85,7 @@ adminOnly();
 
                     </div>
                     <div>
-                        <button type="submit" name="create-admin" class="btn btn-big">Add User</button>
+                        <button type="submit" name="update-user" class="btn btn-big">Add User</button>
                     </div>
                 </form>
 

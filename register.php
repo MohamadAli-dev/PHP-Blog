@@ -1,4 +1,9 @@
-<?php include 'path.php'; ?>
+<?php
+include 'path.php';
+include ROOT_PATH . '/app/controllers/users.php';
+guestsOnly();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,35 +24,33 @@
 </head>
 
 <body>
-    <?php include ROOT_PATH . '/app/includes/header.php'; ?>
+<?php include ROOT_PATH . '/app/includes/header.php';?>
 
     <div class="auth-content">
 
         <form action="register.php" method="post">
             <h2 class="form-title">Register</h2>
 
-            <!-- <div class="msg error">
-                <li>Username required</li>
-            </div> -->
+            <?php include ROOT_PATH . "/app/helpers/formErrors.php"?>
 
             <div>
                 <label>Username</label>
-                <input type="text" class="text-input" name="username">
+                <input type="text" class="text-input" value="<?php echo $username; ?>" name="username">
             </div>
 
             <div>
                 <label>Email</label>
-                <input type="email" class="text-input" name="email">
+                <input type="email" class="text-input" value="<?php echo $email; ?>" name="email">
             </div>
 
             <div>
                 <label>Password</label>
-                <input type="password" class="text-input" name="password">
+                <input type="password" class="text-input" value="<?php echo $password; ?>" name="password">
             </div>
 
             <div>
                 <label>Confirm Password</label>
-                <input type="password" class="text-input" name="passwordConf">
+                <input type="password" class="text-input" value="<?php echo $passwordConf; ?>" name="passwordConf">
             </div>
 
             <div>

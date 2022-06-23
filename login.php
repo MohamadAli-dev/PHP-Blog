@@ -1,4 +1,8 @@
-<?php include 'path.php'; ?>
+<?php 
+include 'path.php';
+include ROOT_PATH . "/app/controllers/users.php";
+guestsOnly();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,25 +24,27 @@
 
 <body>
 
-    <?php include ROOT_PATH . '/app/includes/header.php'; ?>
+    <?php include ROOT_PATH . '/app/includes/header.php';?>
 
     <div class="auth-content">
 
         <form action="login.php" method="post">
             <h2 class="form-title">Login</h2>
 
+            <?php include ROOT_PATH . "/app/helpers/formErrors.php"?>
+
             <div>
                 <label>Username</label>
-                <input type="text" class="text-input" name="username">
+                <input type="text" class="text-input" value="<?php echo $username ?>" name="username">
             </div>
 
             <div>
                 <label>Password</label>
-                <input type="password" class="text-input" name="password">
+                <input type="password" class="text-input" value="<?php echo $password ?>" name="password">
             </div>
 
             <div>
-                <button type="submit" name="register-btn" class="btn btn-big">Login</button>
+                <button type="submit" name="login-btn" class="btn btn-big">Login</button>
             </div>
             <p>Or <a href="<?php echo BASE_URL . '/register.php'; ?> ">Sign Up</a></p>
 

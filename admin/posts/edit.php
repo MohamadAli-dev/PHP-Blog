@@ -10,7 +10,7 @@ adminOnly();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Section - Add Post</title>
+    <title>Admin Section - Edit Post</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -27,7 +27,7 @@ adminOnly();
 
 <body>
 
-    <?php include ROOT_PATH . '/app/includes/adminHeader.php';?>
+    <?php include ROOT_PATH . '/app/includes/adminHeader.php'; ?>
 
     <!-- Admin Page Wrapper starts -->
 
@@ -35,7 +35,7 @@ adminOnly();
 
         <!-- Left Sidebar starts -->
 
-        <?php include ROOT_PATH . '/app/includes/adminSidebar.php';?>
+        <?php include ROOT_PATH . '/app/includes/adminSidebar.php'; ?>
 
         <!-- Left Sidebar ends -->
 
@@ -49,11 +49,13 @@ adminOnly();
 
             <div class="content">
 
-                <h2 class="page-title">Add Post</h2>
+                <h2 class="page-title">Edit Post</h2>
+                <?php include ROOT_PATH . "/app/helpers/formErrors.php" ?>
 
-                <?php include ROOT_PATH . "/app/helpers/formErrors.php"?>
+                <form action="edit.php" method="post" enctype="multipart/form-data">
 
-                <form action="create.php" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="<?php echo $id; ?>">
+
                     <div>
                         <label>Title</label>
                         <input type="text" name="title" value="<?php echo $title; ?>" class="text-input">
@@ -70,31 +72,31 @@ adminOnly();
                         <label>Topic</label>
                         <select name="topic_id" class="text-input">
                             <option value=""></option>
-                            <?php foreach ($topics as $key => $topic): ?>
-                                <?php if (!empty($topic_id) && $topic_id == $topic['id']): ?>
+                            <?php foreach ($topics as $key => $topic) : ?>
+                                <?php if (!empty($topic_id) && $topic_id == $topic['id']) : ?>
                                     <option selected value="<?php echo $topic['id']; ?>"><?php echo $topic['name']; ?></option>
-                                <?php else: ?>
+                                <?php else : ?>
                                     <option value="<?php echo $topic['id']; ?>"><?php echo $topic['name']; ?></option>
-                                <?php endif;?>
-                            <?php endforeach;?>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
                         </select>
                     </div>
                     <div>
-                        <?php if (empty($published)): ?>
+                        <?php if (empty($published) && $published == 0) : ?>
                             <label>
                                 <input type="checkbox" name="published">
                                 Publish
                             </label>
-                        <?php else: ?>
+                        <?php else : ?>
                             <label>
                                 <input type="checkbox" name="published" checked>
                                 Publish
                             </label>
-                        <?php endif;?>
+                        <?php endif; ?>
 
                     </div>
                     <div>
-                        <button type="submit" name="add-post" class="btn btn-big">Add Post</button>
+                        <button type="submit" name="update-post" class="btn btn-big">Update Post</button>
                     </div>
                 </form>
 

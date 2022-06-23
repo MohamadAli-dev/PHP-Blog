@@ -1,3 +1,8 @@
+<?php
+include '../../path.php';
+include ROOT_PATH . '/app/controllers/users.php';
+adminOnly();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,24 +27,7 @@
 
 <body>
 
-    <header>
-        <div class="logo">
-            <h1 class="logo-text"><span>Talk</span>Randomly</h1>
-        </div>
-        <i class="fa fa-bars menu-toggle"></i>
-        <ul class="nav">
-            <li>
-                <a href="#">
-                    <i class="fa fa-user"></i>
-                    MohamadAli
-                    <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
-                </a>
-                <ul>
-                    <li><a href="#" class="logout">Logout</a></li>
-                </ul>
-            </li>
-        </ul>
-    </header>
+    <?php include ROOT_PATH . '/app/includes/adminHeader.php'; ?>
 
 
     <!-- Admin Page Wrapper starts -->
@@ -48,13 +36,7 @@
 
         <!-- Left Sidebar starts -->
 
-        <div class="left-sidebar">
-            <ul>
-                <li><a href="../posts/index.php">Manage Posts</a></li>
-                <li><a href="index.php">Manage Users</a></li>
-                <li><a href="../topics/index.php">Manage Topics</a></li>
-            </ul>
-        </div>
+        <?php include ROOT_PATH . '/app/includes/adminSidebar.php'; ?>
 
         <!-- Left Sidebar ends -->
 
@@ -70,28 +52,26 @@
 
                 <h2 class="page-title">Manage Users</h2>
 
+                <?php include ROOT_PATH . '/app/includes/messages.php' ?>
+
                 <table>
                     <thead>
                         <th>SN</th>
                         <th>Username</th>
-                        <th>Role</th>
+                        <th>Email</th>
                         <th colspan="2">Action</th>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>MohamadAli</td>
-                            <td>Admin</td>
-                            <td><a href="#" class="edit">edit</a></td>
-                            <td><a href="#" class="delete">delete</a></td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Mario</td>
-                            <td>Author</td>
-                            <td><a href="#" class="edit">edit</a></td>
-                            <td><a href="#" class="delete">delete</a></td>
-                        </tr>
+                        <?php foreach($admin_users as $key => $user): ?>
+                            <tr>
+                                <td><?php echo $key + 1 ?></td>
+                                <td><?php echo $user['username'] ?></td>
+                                <td><?php echo $user['email'] ?></td>
+                                <td><a href="edit.php?id=<?php echo $user['id']; ?>" class="edit">edit</a></td>
+                                <td><a href="index.php?delete_id=<?php echo $user['id']; ?>" class="delete">delete</a></td>
+                            </tr>
+                        <?php endforeach; ?>
+                       
                     </tbody>
                 </table>
 

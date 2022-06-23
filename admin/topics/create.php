@@ -1,3 +1,8 @@
+<?php
+include '../../path.php';
+include ROOT_PATH . '/app/controllers/topics.php';
+adminOnly();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,41 +27,14 @@
 
 <body>
 
-    <header>
-        <div class="logo">
-            <h1 class="logo-text"><span>Talk</span>Randomly</h1>
-        </div>
-        <i class="fa fa-bars menu-toggle"></i>
-        <ul class="nav">
-            <li>
-                <a href="#">
-                    <i class="fa fa-user"></i>
-                    MohamadAli
-                    <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
-                </a>
-                <ul>
-                    <li><a href="#" class="logout">Logout</a></li>
-                </ul>
-            </li>
-        </ul>
-    </header>
+    <?php include ROOT_PATH . '/app/includes/adminHeader.php';?>
 
 
     <!-- Admin Page Wrapper starts -->
 
     <div class="admin-wrapper">
 
-        <!-- Left Sidebar starts -->
-
-        <div class="left-sidebar">
-            <ul>
-                <li><a href="../posts/index.php">Manage Posts</a></li>
-                <li><a href="../users/index.php">Manage Users</a></li>
-                <li><a href="index.php">Manage Topics</a></li>
-            </ul>
-        </div>
-
-        <!-- Left Sidebar ends -->
+        <?php include ROOT_PATH . '/app/includes/adminSidebar.php';?>
 
         <!-- Admin Content starts -->
 
@@ -69,18 +47,19 @@
             <div class="content">
 
                 <h2 class="page-title">Add Topic</h2>
+                <?php include ROOT_PATH . "/app/helpers/formErrors.php"?>
 
                 <form action="create.php" method="post">
                     <div>
                         <label>Name</label>
-                        <input type="text" name="name" class="text-input">
+                        <input type="text" name="name" value="<?php echo $name; ?>" class="text-input">
                     </div>
                     <div>
                         <label>Description</label>
-                        <textarea name="description" id="body"></textarea>
+                        <textarea name="description" id="body"><?php echo $description; ?></textarea>
                     </div>
                     <div>
-                        <button type="submit" class="btn btn-big">Add Topic</button>
+                        <button type="submit" name="add-topic" class="btn btn-big">Add Topic</button>
                     </div>
                 </form>
 

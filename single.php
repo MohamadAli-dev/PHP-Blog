@@ -1,4 +1,14 @@
-<?php include 'path.php'; ?>
+<?php
+include 'path.php';
+include ROOT_PATH . '/app/controllers/posts.php';
+
+if (isset($_GET['id'])) {
+    $post = selectOne('posts', ['id' => $_GET['id']]);
+}
+
+$topics = selectAll('topics');
+$posts = selectAll('posts', ['published' => 1]);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +16,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Single Post</title>
+    <title><?php echo $post['title']; ?> | TalkRandomly</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
@@ -22,8 +32,7 @@
 
     <!-- Facebook Page Plugin SDK -->
     <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v13.0"
-        nonce="hftN2Bt6"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v13.0" nonce="hftN2Bt6"></script>
 
     <?php include ROOT_PATH . '/app/includes/header.php'; ?>
 
@@ -39,69 +48,10 @@
             <!-- Main Content wrapper -->
             <div class="main-content-wrapper">
                 <div class="main-content single">
-                    <h1 class="post-title">This is the title of the Post</h1>
+                    <h1 class="post-title"><?php echo $post['title']; ?></h1>
 
                     <div class="post-content">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ratione amet exercitationem
-                            sapiente architecto animi!</p>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur eligendi officiis
-                            accusantium necessitatibus cumque reiciendis fugit et fuga tempore, natus quam doloribus
-                            odio
-                            aperiam aut eos, exercitationem, minus omnis! Placeat!</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio reprehenderit asperiores unde
-                            ex
-                            aliquid. A, autem nostrum dignissimos totam in at ratione laboriosam, nulla sequi inventore
-                            exercitationem magnam laudantium possimus, ab expedita cupiditate blanditiis mollitia id!
-                            Temporibus adipisci esse saepe!</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, fugit.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ratione amet exercitationem
-                            sapiente architecto animi!</p>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur eligendi officiis
-                            accusantium necessitatibus cumque reiciendis fugit et fuga tempore, natus quam doloribus
-                            odio
-                            aperiam aut eos, exercitationem, minus omnis! Placeat!</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio reprehenderit asperiores unde
-                            ex
-                            aliquid. A, autem nostrum dignissimos totam in at ratione laboriosam, nulla sequi inventore
-                            exercitationem magnam laudantium possimus, ab expedita cupiditate blanditiis mollitia id!
-                            Temporibus adipisci esse saepe!</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, fugit.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ratione amet exercitationem
-                            sapiente architecto animi!</p>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur eligendi officiis
-                            accusantium necessitatibus cumque reiciendis fugit et fuga tempore, natus quam doloribus
-                            odio
-                            aperiam aut eos, exercitationem, minus omnis! Placeat!</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio reprehenderit asperiores unde
-                            ex
-                            aliquid. A, autem nostrum dignissimos totam in at ratione laboriosam, nulla sequi inventore
-                            exercitationem magnam laudantium possimus, ab expedita cupiditate blanditiis mollitia id!
-                            Temporibus adipisci esse saepe!</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, fugit.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ratione amet exercitationem
-                            sapiente architecto animi!</p>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur eligendi officiis
-                            accusantium necessitatibus cumque reiciendis fugit et fuga tempore, natus quam doloribus
-                            odio
-                            aperiam aut eos, exercitationem, minus omnis! Placeat!</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio reprehenderit asperiores unde
-                            ex
-                            aliquid. A, autem nostrum dignissimos totam in at ratione laboriosam, nulla sequi inventore
-                            exercitationem magnam laudantium possimus, ab expedita cupiditate blanditiis mollitia id!
-                            Temporibus adipisci esse saepe!</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, fugit.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ratione amet exercitationem
-                            sapiente architecto animi!</p>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur eligendi officiis
-                            accusantium necessitatibus cumque reiciendis fugit et fuga tempore, natus quam doloribus
-                            odio
-                            aperiam aut eos, exercitationem, minus omnis! Placeat!</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio reprehenderit asperiores unde
-                            ex
-                            aliquid. A, autem nostrum dignissimos totam in at ratione laboriosam, nulla sequi inventore
-                            exercitationem magnam laudantium possimus, ab expedita cupiditate blanditiis mollitia id!
-                            Temporibus adipisci esse saepe!</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, fugit.</p>
+                        <?php echo html_entity_decode($post['body']); ?>
                     </div>
 
                 </div>
@@ -121,43 +71,21 @@
                 <div class="section popular">
                     <h2 class="section-title">Popular</h2>
 
-                    <div class="post clearfix">
-                        <img src="assets/images/image_1.jpg" alt="">
-                        <a href="#" class="title">How to overcome your fears</a>
-                    </div>
-
-                    <div class="post clearfix">
-                        <img src="assets/images/image_2.jpg" alt="">
-                        <a href="#" class="title">How to overcome your fears</a>
-                    </div>
-
-                    <div class="post clearfix">
-                        <img src="assets/images/image_3.jpg" alt="">
-                        <a href="#" class="title">How to overcome your fears</a>
-                    </div>
-
-                    <div class="post clearfix">
-                        <img src="assets/images/image_4.jpg" alt="">
-                        <a href="#" class="title">How to overcome your fears</a>
-                    </div>
-
-                    <div class="post clearfix">
-                        <img src="assets/images/image_5.jpg" alt="">
-                        <a href="#" class="title">How to overcome your fears</a>
-                    </div>
+                    <?php foreach ($posts as $p) : ?>
+                        <div class="post clearfix">
+                            <img src="<?php echo BASE_URL . '/assets/images/' . $p['image']; ?>" alt="">
+                            <a href="single.php?id=<?php echo $p['id']; ?>" class="title"><?php echo $p['title']; ?></a>
+                        </div>
+                    <?php endforeach; ?>
 
                 </div>
 
                 <div class="section topics">
                     <h2 class="section-title">Topics</h2>
                     <ul>
-                        <li><a href="#">Poems</a></li>
-                        <li><a href="#">Quotes</a></li>
-                        <li><a href="#">Fiction</a></li>
-                        <li><a href="#">Biography</a></li>
-                        <li><a href="#">Motivation</a></li>
-                        <li><a href="#">Imagination</a></li>
-                        <li><a href="#">Life lessons</a></li>
+                        <?php foreach ($topics as $topic) : ?>
+                            <li><a href="<?php echo BASE_URL . '/index.php?t_id=' . $topic_id . '&name=' . $topic['name']; ?>"><?php echo $topic['name']; ?></a></li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
 

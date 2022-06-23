@@ -1,4 +1,21 @@
-<?php include 'path.php'; ?>
+<?php
+include 'path.php';
+include ROOT_PATH . '/app/controllers/topics.php';
+
+$posts = array();
+$postsTitle = 'Recent Posts';
+
+if (isset($_GET['t_id'])) {
+    $postsTitle = "You searched for posts under '" . $_GET['name'] . "'";
+    $posts = getPostsByTopicId($_GET['t_id']);
+} else if (isset($_POST['search-term'])) {
+    $postsTitle = "You searched for '" . $_POST['search-term'] . "'";
+    $posts = searchPosts($_POST['search-term']);
+} else {
+    $posts = getPublishedPosts();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +38,7 @@
 <body>
 
     <?php include ROOT_PATH . '/app/includes/header.php'; ?>
-
+    <?php include ROOT_PATH . '/app/includes/messages.php'; ?>
 
     <!-- Page Wrapper starts -->
 
@@ -35,65 +52,19 @@
             <i class="fa fa-chevron-right next"></i>
 
             <div class="post-wrapper">
-                <div class="post">
-                    <img src="assets/images/image_1.jpg" alt="" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="single.php">One day your life will flash before your eyes</a></h4>
-                        <i class="far fa-user"> MohamadAli</i>
-                        &nbsp;
-                        <i class="far fa-calendar"> Apr 24, 2022</i>
-                    </div>
-                </div>
 
-                <div class="post">
-                    <img src="assets/images/image_2.jpg" alt="" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="single.php">One day your life will flash before your eyes</a></h4>
-                        <i class="far fa-user"> MohamadAli</i>
-                        &nbsp;
-                        <i class="far fa-calendar"> Apr 24, 2022</i>
+                <?php foreach ($posts as $post) : ?>
+                    <div class="post">
+                        <img src="<?php echo BASE_URL . '/assets/images/' . $post['image']; ?>" alt="" class="slider-image">
+                        <div class="post-info">
+                            <h4><a href="single.php?id=<?php echo $post['id']; ?>"><?php echo $post['title']; ?></a></h4>
+                            <i class="far fa-user"> <?php echo $post['username']; ?></i>
+                            &nbsp;
+                            <i class="far fa-calendar"> <?php echo date('F j, Y', strtotime($post['created_at'])); ?></i>
+                        </div>
                     </div>
-                </div>
+                <?php endforeach; ?>
 
-                <div class="post">
-                    <img src="assets/images/image_3.jpg" alt="" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="single.php">One day your life will flash before your eyes</a></h4>
-                        <i class="far fa-user"> MohamadAli</i>
-                        &nbsp;
-                        <i class="far fa-calendar"> Apr 24, 2022</i>
-                    </div>
-                </div>
-
-                <div class="post">
-                    <img src="assets/images/image_4.jpg" alt="" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="single.php">One day your life will flash before your eyes</a></h4>
-                        <i class="far fa-user"> MohamadAli</i>
-                        &nbsp;
-                        <i class="far fa-calendar"> Apr 24, 2022</i>
-                    </div>
-                </div>
-
-                <div class="post">
-                    <img src="assets/images/image_5.jpg" alt="" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="single.php">One day your life will flash before your eyes</a></h4>
-                        <i class="far fa-user"> MohamadAli</i>
-                        &nbsp;
-                        <i class="far fa-calendar"> Apr 24, 2022</i>
-                    </div>
-                </div>
-
-                <div class="post">
-                    <img src="assets/images/image_6.jpg" alt="" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="single.php">One day your life will flash before your eyes</a></h4>
-                        <i class="far fa-user"> MohamadAli</i>
-                        &nbsp;
-                        <i class="far fa-calendar"> Apr 24, 2022</i>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -105,63 +76,21 @@
 
             <!-- Main Content -->
             <div class="main-content">
-                <h1 class="recent-post-title">Recent Posts</h1>
+                <h1 class="recent-post-title"><?php echo $postsTitle; ?></h1>
 
-                <div class="post clearfix">
-                    <img src="assets/images/image_1.jpg" alt="" class="post-image">
-                    <div class="post-preview">
-                        <h2><a href="single.php">The strongest and sweetest songs yet remain to be sung</a></h2>
-                        <i class="far fa-user"> MohamadAli</i>
-                        &nbsp;
-                        <i class="far fa-calendar"> Apr 24, 2022</i>
-                        <p class="preview-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis,
-                            deleniti eius. Veritatis asperiores soluta atque porro minima voluptas facere aspernatur
-                            accusamus vel.</p>
-                        <a href="single.php" class="btn read-more"> Read More</a>
+                <?php foreach ($posts as $post) : ?>
+                    <div class="post clearfix">
+                        <img src="<?php echo BASE_URL . '/assets/images/' . $post['image']; ?>" alt="" class="post-image">
+                        <div class="post-preview">
+                            <h2><a href="single.php?id=<?php echo $post['id']; ?>"><?php echo $post['title']; ?></a></h2>
+                            <i class="far fa-user"> <?php echo $post['username']; ?></i>
+                            &nbsp;
+                            <i class="far fa-calendar"> <?php echo date('F j, Y', strtotime($post['created_at'])); ?></i>
+                            <p class="preview-text"><?php echo html_entity_decode(substr($post['body'], 0, 150) . '...'); ?></p>
+                            <a href="single.php?id=<?php echo $post['id']; ?>" class="btn read-more"> Read More</a>
+                        </div>
                     </div>
-                </div>
-
-                <div class="post clearfix">
-                    <img src="assets/images/image_2.jpg" alt="" class="post-image">
-                    <div class="post-preview">
-                        <h2><a href="single.php">The strongest and sweetest songs yet remain to be sung</a></h2>
-                        <i class="far fa-user"> MohamadAli</i>
-                        &nbsp;
-                        <i class="far fa-calendar"> Apr 24, 2022</i>
-                        <p class="preview-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis,
-                            deleniti eius. Veritatis asperiores soluta atque porro minima voluptas facere aspernatur
-                            accusamus vel.</p>
-                        <a href="single.php" class="btn read-more"> Read More</a>
-                    </div>
-                </div>
-
-                <div class="post clearfix">
-                    <img src="assets/images/image_3.jpg" alt="" class="post-image">
-                    <div class="post-preview">
-                        <h2><a href="single.php">The strongest and sweetest songs yet remain to be sung</a></h2>
-                        <i class="far fa-user"> MohamadAli</i>
-                        &nbsp;
-                        <i class="far fa-calendar"> Apr 24, 2022</i>
-                        <p class="preview-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis,
-                            deleniti eius. Veritatis asperiores soluta atque porro minima voluptas facere aspernatur
-                            accusamus vel.</p>
-                        <a href="single.php" class="btn read-more"> Read More</a>
-                    </div>
-                </div>
-
-                <div class="post clearfix">
-                    <img src="assets/images/image_4.jpg" alt="" class="post-image">
-                    <div class="post-preview">
-                        <h2><a href="single.php">The strongest and sweetest songs yet remain to be sung</a></h2>
-                        <i class="far fa-user"> MohamadAli</i>
-                        &nbsp;
-                        <i class="far fa-calendar"> Apr 24, 2022</i>
-                        <p class="preview-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis,
-                            deleniti eius. Veritatis asperiores soluta atque porro minima voluptas facere aspernatur
-                            accusamus vel.</p>
-                        <a href="single.php" class="btn read-more"> Read More</a>
-                    </div>
-                </div>
+                <?php endforeach; ?>
 
             </div>
             <!-- Main Content -->
@@ -179,13 +108,9 @@
                 <div class="section topics">
                     <h2 class="section-title">Topics</h2>
                     <ul>
-                        <li><a href="#">Poems</a></li>
-                        <li><a href="#">Quotes</a></li>
-                        <li><a href="#">Fiction</a></li>
-                        <li><a href="#">Biography</a></li>
-                        <li><a href="#">Motivation</a></li>
-                        <li><a href="#">Imagination</a></li>
-                        <li><a href="#">Life lessons</a></li>
+                        <?php foreach ($topics as $key => $topic) : ?>
+                            <li><a href="<?php echo BASE_URL . '/index.php?t_id=' . $topic['id'] . '&name=' . $topic['name']; ?>"><?php echo $topic['name']; ?></a></li>
+                        <?php endforeach; ?>
                     </ul>
                 </div>
 
